@@ -10,3 +10,5 @@
 
 # bar charts
 # https://www.tutorialspoint.com/matplotlib/matplotlib_bar_plot.htm 
+
+# https://matplotlib.org/stable/gallery/subplots_axes_and_figures/subplots_demo.html
