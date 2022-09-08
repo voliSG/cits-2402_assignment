@@ -59,7 +59,7 @@ def read_AusData(path, filenames):
     #total
     age_all_M = number_M[9::10][:15] # Male 
     age_all_F = number_F[9::10][:15] # Female 
-    AUS['All']={'M':age_all_M, 'F':age_all_F}
+    AUS['all']={'M':age_all_M, 'F':age_all_F}
     
      # combining the data to complete the age group [ (15-19 + 20 -24) and (75-84 + 85&over)]
     age_15_24_M = number_M[::10] + number_M[1::10]
