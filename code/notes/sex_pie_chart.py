@@ -42,5 +42,5 @@ size_sex.append(total_m)
 size_sex.append(total_f)
 
 # plotting pie chart for sex in australia
-plt.pie(size_sex,labels=['M', 'F'], rotatelabels=True)
+plt.pie(size_sex,labels=total_label)
 plt.show()
