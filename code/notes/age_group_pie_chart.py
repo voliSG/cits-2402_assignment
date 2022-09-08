@@ -15,3 +15,23 @@ plt.pie(total_age_range[:-1], labels=age_label)
 plt.title("Proportion of different age ranges in US")
 
 plt.show()
+
+# Australia
+# getiing data for aus
+data_AUS = read_AusData(path_dataFolder, filenames_aus)
+
+# generating size
+size_age=[]
+
+# adding up all value in each age group
+for key, value in data_AUS.items():
+    total_age=0
+    if len(size_age)< 8:
+        for k , v in value.items():
+            for i in range(len(v)):
+                total_age +=v[i]
+    size_age.append(total_age)
+
+# plotting pie chart
+plt.pie(size_age[:-1],labels=['15_24', '25_34', '35_44', '45_54', '55_64', '65_74', '75+'], rotatelabels=True)
+plt.show()
