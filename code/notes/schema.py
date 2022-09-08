@@ -22,11 +22,13 @@ def read_AusData(filenames):
 
 
 def read_UsFile(data, sex, filename):
+  open file:
+    data[age][sex].append(value) 
   return data
 
 def read_UsData(filename_M, filename_F):
   data = {
-  "15_24": {"M"  : (),
+  "15_24": {"M"  : [],
             "F"  : ()},
   "25_34": {"M"  : (),
             "F"  : ()},

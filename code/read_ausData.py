@@ -4,16 +4,18 @@ path_dataFolder = "./data/"
 filenames_aus = ["2021Census_G17A_AUS_AUS.csv", "2021Census_G17B_AUS_AUS.csv", "2021Census_G17C_AUS_AUS.csv"]
 
 def read_AusData(path, filenames):
-  """performs data transformation and cleaning for ABS Census data
-     (G17 TOTAL PERSONAL INCOME (WEEKLY) BY AGE BY SEX)
+    """performs data transformation and cleaning for ABS Census data
+        (G17 TOTAL PERSONAL INCOME (WEEKLY) BY AGE BY SEX)
 
-  Args:
-      filenames (list): list of filenames
+    Args:
+        filenames (list): list of filenames
 
-  Returns:
-      _type_: _description_
-  """
+    Returns:
+        dictionary: 
+    """
+
     # open file
+    """
     with open(file_1,'r') as f1, open(file_2, 'r') as f2:
         f1= f1.read().splitlines()
         f2=f2.read().splitlines()
@@ -85,6 +87,7 @@ def read_AusData(path, filenames):
         AUS['75+']={'M':age_75_M, 'F':age_75_F} # append to dict 
                 
         return AUS
+    """
       
 
 read_AusData(path, filenames_aus)    
