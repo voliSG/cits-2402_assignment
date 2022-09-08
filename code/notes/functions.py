@@ -35,17 +35,31 @@ def read_UsFile(filename):
     
 
 def read_UsData(filename_M, filename_F):
-  final_dict, final_dict_M, final_dict_F = {}, {}, {}
+  final_dict =  {
+        "15_24": {"M"  : [],
+                  "F"  : []},
+        "25_34": {"M"  : [],
+                  "F"  : []},
+        "35_44":  {"M" : [],
+                  "F"  : []},
+        "45_54": {"M"  : [],
+                  "F"  : []},
+        "55_64": {"M"  : [],
+                  "F"  : []},
+        "65_74": {"M"  : [],
+                  "F"  : []},
+        "75+"  : {"M"  : [],
+                  "F"  : []},
+        "All"  : {"M"  : [],
+                  "F"  : []}
+        }
 
   male_data = read_UsFile(filename_M)
   female_data = read_UsFile(filename_F)
 
-  #for i in range(len(male_data)):
-  for age_group, number in male_data.items():
-    final_dict_M["M"] = number
-    final_dict_F["F"] = female_data[age_group]
-    final_dict[age_group] = final_dict_M, final_dict_F
-
+  for (age_group,num_m), (age_group,num_f) in zip(male_data.items(), female_data.items()):
+    final_dict[age_group]["M"].append(num_m)
+    final_dict[age_group]["F"].append(num_f) 
 
   return final_dict
 
