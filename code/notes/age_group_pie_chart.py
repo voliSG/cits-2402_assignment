@@ -26,10 +26,9 @@ size_age=[]
 # adding up all value in each age group
 for key, value in data_AUS.items():
     total_age=0
-    if len(size_age)< 8:
-        for k , v in value.items():
-            for i in range(len(v)):
-                total_age +=v[i]
+    for k , v in value.items():
+        for i in range(len(v)):
+            total_age +=v[i]
     size_age.append(total_age)
 
 # plotting pie chart
