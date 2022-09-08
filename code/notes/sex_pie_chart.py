@@ -44,3 +44,14 @@ size_sex.append(total_f)
 # plotting pie chart for sex in australia
 plt.pie(size_sex,labels=total_label)
 plt.show()
+
+# plot US and Australia side by side
+fig, (us,aus) = plt.subplots(1,2,figsize=(10,10))
+
+us.pie(total_US_list, labels=total_label)
+us.title("Gender proportion in US")
+
+aus.pie(size_sex,labels=total_label)
+aus.title("Gender proportion in Australia")
+
+plt.show()
