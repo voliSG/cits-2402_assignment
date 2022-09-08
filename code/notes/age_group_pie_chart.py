@@ -32,5 +32,17 @@ for key, value in data_AUS.items():
     size_age.append(total_age)
 
 # plotting pie chart
-plt.pie(size_age[:-1],labels=['15_24', '25_34', '35_44', '45_54', '55_64', '65_74', '75+'], rotatelabels=True)
+plt.pie(size_age[:-1],labels=age_label)
+plt.title("Proportion of different age ranges in Australia")
+plt.show()
+
+# plot US and Australia side by side
+fig, (us,aus) = plt.subplots(1,2,figsize=(10,10))
+
+us.pie(total_age_range[:-1], labels=age_label)
+us.title("Proportion of different age ranges in US")
+
+aus.pie(size_age[:-1],labels=age_label)
+aus.title("Proportion of different age ranges in Australia")
+
 plt.show()
