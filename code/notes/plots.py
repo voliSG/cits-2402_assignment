@@ -1,9 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 # Data
-states = ["15-24", "25-34", "35-44", "45-54", "55-64", "65-74", "over 75"]
-staff = np.array([20, 30, 40, 10, 15, 35, 18, 25, 22, 7, 12, 22, 3, 4, 5, 8,
-                  14, 28, 24, 32])
+states = ["15-24", "25-34", "35-44", "45-54", "55-64", "65-74", "over 75", "overall"]
+staff = np.array([20, 30, 40, 10, 15, 35, 18, 25])
 sales = staff * (20 + 10 * np.random.random(staff.size))
 
 # Sort by number of sales staff
