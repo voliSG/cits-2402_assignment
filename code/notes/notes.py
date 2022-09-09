@@ -5,6 +5,7 @@
 # https://gist.github.com/CMCDragonkai/c79b9a0883e31b327c88bfadb8b06fc4
 import numpy as np
 import matplotlib.pyplot as plt
+from decimal import *
 
 # ensure your arr is sorted from lowest to highest values first!
 
@@ -36,28 +37,27 @@ def gini(income_bracket, population):
     richer_props = []
     
     total_income = 0
+    richer_prop = 1
     for income, pop in zip(income_bracket, population):
-        total_income += income * pop
-        pop_prop = pop/total_pop
+        sub_total_income = income * pop
+        total_income += sub_total_income
+        pop_prop = Decimal(pop/total_pop)
 
-        incomes.append(income)
+        incomes.append(sub_total_income)
         pop_props.append(pop_prop)
-        richer_props.append(1-pop_prop)
+        
+        richer_prop -= pop_prop
+        richer_props.append(richer_prop)
 
         
-    income_props = [inc/total_income for inc in incomes]
+    income_props = [Decimal(inc/total_income) for inc in incomes]
     
 
-    #score = [(income_prop * (pop_prop + 2*richer_prop))
-    #        for income_prop, pop_prop, richer_prop in zip(income_props, pop_props, richer_props)]
-    score = []
-    for income_prop, pop_prop, richer_prop in zip(income_props, pop_props, richer_props):
-        print(income_prop * (pop_prop + 2  *  richer_prop))
-    #print(score)
+    score = [(income_prop * (pop_prop + 2*richer_prop))
+            for income_prop, pop_prop, richer_prop in zip(income_props, pop_props, richer_props)]
+
     
     total_score = sum(score)
-    print(total_score)
-    
     gini_index = 1-total_score
     return gini_index
 
@@ -71,10 +71,10 @@ def lorenz(arr):
 # show the gini index!
 print(gini(income_brackets, income_count))
 
-lorenz_curve = lorenz(arr)
+#lorenz_curve = lorenz(arr)
 
 # we need the X values to be between 0.0 to 1.0
-plt.plot(np.linspace(0.0, 1.0, lorenz_curve.size), lorenz_curve)
+#plt.plot(np.linspace(0.0, 1.0, lorenz_curve.size), lorenz_curve)
 # plot the straight line perfect equality curve
-plt.plot([0,1], [0,1])
-plt.show()
+#plt.plot([0,1], [0,1])
+#plt.show()

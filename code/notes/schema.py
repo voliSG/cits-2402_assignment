@@ -12,6 +12,16 @@
   "All"  : ,
 }
 
+{
+  "15_24": 0.5,
+  "25_34": ,
+  "35_44": ,
+  "45_54": ,
+  "55_64": ,
+  "65_74": ,
+  "75+"  : ,
+  "All"  : ,
+}
 
 #FUNCTION DEFINITIONS
 def read_AusData(filenames):
